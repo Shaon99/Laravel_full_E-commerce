@@ -16,6 +16,7 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- End layout styles -->
+
     <link rel="shortcut icon" href="{{URL::to('assets/images/s.jpg')}}" />
   </head>
   <body>
@@ -23,8 +24,8 @@
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="#"><img src="{{URL::to('assets/images/logo.png')}}" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="#"><img src="{{URL::to('assets/images/logo.png')}}" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="/admin/dashboard"><img src="{{URL::to('assets/images/logo.png')}}" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="/admin/dashboard"><img src="{{URL::to('assets/images/logo.png')}}" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -107,7 +108,9 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-bell-outline"></i>
+                <i class="mdi mdi-bell-outline tip">
+                  <span class="tooltiptext h6">Notifications</span>
+                </i>
                 <span class="count-symbol bg-danger"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
@@ -153,8 +156,10 @@
               </div>
             </li>
             <li class="nav-item nav-logout d-none d-lg-block">
-              <a class="nav-link" href="#">
-                <i class="mdi mdi-power"></i>
+                <a class="nav-link" href="/admin/logout">
+                <i class="mdi mdi-power tip">
+                  <span class="tooltiptext h6">logout</span>
+                </i>
               </a>
             </li>
             <li class="nav-item nav-settings d-none d-lg-block">
@@ -188,7 +193,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="/admin/dashboard">
                 <span class="menu-title">Dashboard</span>
                 <i class="mdi mdi-home menu-icon"></i>
               </a>
@@ -201,32 +206,32 @@
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Category</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Brand</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/admin/category">Category</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/admin/brand">Brand</a></li>
                   
                 </ul>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="/admin/product">
                 <span class="menu-title">Products</span>
                 <i class="mdi  menu-icon mdi-package"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/forms/basic_elements.html">
+              <a class="nav-link" href="/admin/shipping">
                 <span class="menu-title">Shipping</span>
                 <i class="mdi menu-icon  mdi-truck"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/charts/chartjs.html">
+              <a class="nav-link" href="/admin/order">
                 <span class="menu-title">Orders</span>
                 <i class="mdi  menu-icon  mdi-cart"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/tables/basic-table.html">
+              <a class="nav-link" href="/admin/review">
                 <span class="menu-title">Review</span>
                 <i class="mdi  menu-icon mdi-view-grid"></i>
               </a>
@@ -239,8 +244,8 @@
               </a>
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html">Sells</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html">Report</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/admin/sell">Sells</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="/admin/report">Report</a></li>
                 
                 </ul>
               </div>
@@ -248,9 +253,9 @@
             <li class="nav-item sidebar-actions">
               <span class="nav-link">
                 <div class="border-bottom">
-                  <button class="btn btn-block btn-lg  btn-gradient-danger mt-4">+ Add User</button>
+                  <a href="/admin/adduser" class="btn btn-block btn-lg  btn-gradient-danger mt-4">+ Add User</a>
                 </div>
-                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add Product</button>
+                <a href="/admin/product" class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add Product</a>
                 <div class="mt-4">
                   
                 </div>
@@ -287,6 +292,30 @@
    
     <script src="{{asset('assets/js/dashboard.js')}}"></script>
     <script src="{{asset('assets/js/todolist.js')}}"></script>
+    <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
+
+
+    <script>  
+      $(document).on("click", "#delete", function(e){
+          e.preventDefault();
+          var link = $(this).attr("href");
+             swal({
+               title: "Are you sure Want to delete?",
+               text: "Once Delete, This will be Permanently Delete!",
+               icon: "warning",
+               buttons: true,
+               dangerMode: true,
+             })
+             .then((willDelete) => {
+               if (willDelete) {
+                    window.location.href = link;
+               } else {
+                 swal("Safe Data!");
+               }
+             });
+         });
+ </script>
+
 
   </body>
 </html>

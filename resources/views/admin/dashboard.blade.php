@@ -2,35 +2,19 @@
 @section('content')
  <div class="main-panel">
     <div class="content-wrapper">
-      <div class="row" id="proBanner">
-        <div class="col-12">
-          <span class="d-flex align-items-center purchase-popup">
-            <p>Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!</p>
-            <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn download-button purchase-button ml-auto">Upgrade To Pro</a>
-            <i class="mdi mdi-close" id="bannerClose"></i>
-          </span>
-        </div>
-      </div>
-      <div class="page-header">
-        <h3 class="page-title">
+      <div class="page-header" id="bannerClose">
+        <h3 class="page-title ">
           <span class="page-title-icon bg-gradient-primary text-white mr-2">
             <i class="mdi mdi-home"></i>
           </span> Dashboard
         </h3>
-        <nav aria-label="breadcrumb">
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">
-              <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-            </li>
-          </ul>
-        </nav>
       </div>
       <div class="row">
         <div class="col-md-4 stretch-card grid-margin">
           <div class="card bg-gradient-danger card-img-holder text-white">
             <div class="card-body">
-              <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-              <h4 class="font-weight-normal mb-3">Weekly Sales <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+              <img src="{{URL::to('assets/images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
+              <h4 class="font-weight-normal mb-3">Today sell <i class="mdi mdi-chart-line mdi-24px float-right"></i>
               </h4>
               <h2 class="mb-5">$ 15,0000</h2>
               <h6 class="card-text">Increased by 60%</h6>
@@ -40,8 +24,8 @@
         <div class="col-md-4 stretch-card grid-margin">
           <div class="card bg-gradient-info card-img-holder text-white">
             <div class="card-body">
-              <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-              <h4 class="font-weight-normal mb-3">Weekly Orders <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+              <img src="{{URL::to('assets/images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
+              <h4 class="font-weight-normal mb-3">Weekly Sell <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
               </h4>
               <h2 class="mb-5">45,6334</h2>
               <h6 class="card-text">Decreased by 10%</h6>
@@ -49,10 +33,43 @@
           </div>
         </div>
         <div class="col-md-4 stretch-card grid-margin">
+          <div class="card bg-gradient-warning card-img-holder text-white">
+            <div class="card-body">
+              <img src="{{URL::to('assets/images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
+              <h4 class="font-weight-normal mb-3">New Order <i class="mdi mdi-diamond mdi-24px float-right"></i>
+              </h4>
+              <h2 class="mb-5">95,5741</h2>
+              <h6 class="card-text">Increased by 5%</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
+          <div class="card bg-gradient-primary card-img-holder text-white">
+            <div class="card-body">
+              <img src="{{URL::to('assets/images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
+              <h4 class="font-weight-normal mb-3">Monthly Sell <i class="mdi mdi-diamond mdi-24px float-right"></i>
+              </h4>
+              <h2 class="mb-5">95,5741</h2>
+              <h6 class="card-text">Increased by 5%</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
           <div class="card bg-gradient-success card-img-holder text-white">
             <div class="card-body">
-              <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
-              <h4 class="font-weight-normal mb-3">Visitors Online <i class="mdi mdi-diamond mdi-24px float-right"></i>
+              <img src="{{URL::to('assets/images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
+              <h4 class="font-weight-normal mb-3">Product<i class="mdi mdi-diamond mdi-24px float-right"></i>
+              </h4>
+              <h2 class="mb-5">95,5741</h2>
+              <h6 class="card-text">Increased by 5%</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
+          <div class="card bg-gradient-dark card-img-holder text-white">
+            <div class="card-body">
+              <img src="{{URL::to('assets/images/dashboard/circle.svg')}}" class="card-img-absolute" alt="circle-image" />
+              <h4 class="font-weight-normal mb-3">Top Sell product <i class="mdi mdi-diamond mdi-24px float-right"></i>
               </h4>
               <h2 class="mb-5">95,5741</h2>
               <h6 class="card-text">Increased by 5%</h6>
@@ -86,7 +103,7 @@
         <div class="col-12 grid-margin">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Recent Tickets</h4>
+              <h4 class="card-title"></h4>
               <div class="table-responsive">
                 <table class="table">
                   <thead>
@@ -101,7 +118,7 @@
                   <tbody>
                     <tr>
                       <td>
-                        <img src="assets/images/faces/face1.jpg" class="mr-2" alt="image"> David Grey
+                        <img src="{{URL::to('assets/images/faces/face1.jpg')}}" class="mr-2" alt="image"> David Grey
                       </td>
                       <td> Fund is not recieved </td>
                       <td>
@@ -112,7 +129,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <img src="assets/images/faces/face2.jpg" class="mr-2" alt="image"> Stella Johnson
+                        <img src="{{URL::to('assets/images/faces/face2.jpg')}}" class="mr-2" alt="image"> Stella Johnson
                       </td>
                       <td> High loading time </td>
                       <td>
@@ -123,7 +140,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <img src="assets/images/faces/face3.jpg" class="mr-2" alt="image"> Marina Michel
+                        <img src="{{URL::to('assets/images/faces/face3.jpg')}}" class="mr-2" alt="image"> Marina Michel
                       </td>
                       <td> Website down for one week </td>
                       <td>
@@ -134,7 +151,7 @@
                     </tr>
                     <tr>
                       <td>
-                        <img src="assets/images/faces/face4.jpg" class="mr-2" alt="image"> John Doe
+                        <img src="{{URL::to('assets/images/faces/face4.jpg')}}" class="mr-2" alt="image"> John Doe
                       </td>
                       <td> Loosing control on server </td>
                       <td>
@@ -167,16 +184,16 @@
               </div>
               <div class="row mt-3">
                 <div class="col-6 pr-1">
-                  <img src="assets/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                  <img src="assets/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
+                  <img src="{{URL::to('assets/images/dashboard/img_1.jpg')}}" class="mb-2 mw-100 w-100 rounded" alt="image">
+                  <img src="{{URL::to('assets/images/dashboard/img_4.jpg')}}" class="mw-100 w-100 rounded" alt="image">
                 </div>
                 <div class="col-6 pl-1">
-                  <img src="assets/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                  <img src="assets/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
+                  <img src="{{URL::to('assets/images/dashboard/img_2.jpg')}}" class="mb-2 mw-100 w-100 rounded" alt="image">
+                  <img src="{{URL::to('assets/images/dashboard/img_2.jpg')}}" class="mw-100 w-100 rounded" alt="image">
                 </div>
               </div>
               <div class="d-flex mt-5 align-items-top">
-                <img src="assets/images/faces/face3.jpg" class="img-sm rounded-circle mr-3" alt="image">
+                <img src="{{URL::to('assets/images/faces/face3.jpg')}}" class="img-sm rounded-circle mr-3" alt="image">
                 <div class="mb-0 flex-grow">
                   <h5 class="mr-2 mb-2">School Website - Authentication Module.</h5>
                   <p class="mb-0 font-weight-light">It is a long established fact that a reader will be distracted by the readable content of a page.</p>

@@ -18,12 +18,16 @@
                     </div>
                     <div class="col-md-3">
                         <div class="user">
-                            <a href="user/wishlist" class="btn wishlist" data-toggle="tooltip" data-placement="top" title="Wishlist">
-                                <i class="fa fa-heart"></i>
+                            <a href="user/wishlist" class="btn wishlist">
+                                <i class="fa fa-heart tip">
+                                    <span class="tooltiptext h6">wishlist</span>
+                                </i>
                                 <span>(0)</span>
                             </a>
-                            <a href="user/cart" class="btn cart " data-toggle="tooltip" data-placement="top" title="Cart">
-                                <i class="fa fa-shopping-cart"></i>
+                            <a href="user/cart" class="btn cart">
+                                <i class="fa fa-shopping-cart tip">
+                                    <span class="tooltiptext h6">cart</span>
+                                </i>
                                 <span>(0)</span>
                             </a>
                         </div>

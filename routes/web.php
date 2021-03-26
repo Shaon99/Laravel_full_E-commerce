@@ -34,6 +34,26 @@ Auth::routes();
 Route::group(['prefix'=>'admin','middleware'=>['admin'],'namespace'=>'admin'],function() {
     //adminaccess
     Route::get('/dashboard', [adminController::Class,'dashboard']);
+    Route::get('/category', [adminController::Class,'category']);
+    Route::get('/brand', [adminController::Class,'brand']);
+    Route::get('/product', [adminController::Class,'product']);
+    Route::get('/shipping', [adminController::Class,'ship']);
+    Route::get('/order', [adminController::Class,'order']);
+
+//productrelatedroute
+Route::get('/addcategory', [adminController::Class,'addcategory'])->name('admin.category');
+Route::post('/storecategory', [adminController::Class,'storeCategory'])->name('admin.category');
+Route::get('/editcategory/{id}', [adminController::Class,'editCategory']);
+Route::post('/updatecategory/{id}', [adminController::Class,'updateCategory']);
+Route::get('/deletecategory/{id}', [adminController::Class,'delete']);
+
+
+
+
+
+
+
+//logout
     Route::get('/logout', [adminController::Class,'logout']);
 
 

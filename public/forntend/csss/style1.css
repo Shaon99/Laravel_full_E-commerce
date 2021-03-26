@@ -37,6 +37,36 @@ h2 {
     }
 }
 
+/*tooltips*/
+
+ .tip {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .tip .tooltiptext {
+	visibility: hidden;
+	width: auto;
+	background-color:#ff6f61;
+	color: white;
+	text-align: center;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	font-family: 'ubuntu-light', sans-serif;
+	border-radius: 2px;
+	padding: auto;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	top: 200%;
+  }
+  
+  .tip:hover .tooltiptext {
+	visibility: visible;
+  }
+
 
 /**********************************/
 /******** Back to Top CSS *********/
