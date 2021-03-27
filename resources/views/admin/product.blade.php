@@ -8,13 +8,13 @@
             <i class="mdi  mdi-buffer"></i> </span>Product</h3>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <a href="" class="btn btn-gradient-info mdi mdi-plus">Add Product</a>
+            <a href="/admin/addproduct" class="btn btn-gradient-info mdi mdi-plus">Add Product</a>
           </ol>
         </nav>
       </div>
           <div class="card">
             <div class="card-body">
-              <table class="table table-bordered table-responsive">
+              <table class="table table-responsive">
                 <thead>
                   <tr>
                     <th>S.N</th>
@@ -30,22 +30,21 @@
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
+                  @foreach($data as $row)
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>eee</td>
-                    <td>eee</td>
-                    <td>eeee</td>
-                    <td>eee</td>
-                    <td>eee</td>
-                    <td>eee</td>
-                    <td>eee</td>
-                    <td>eee</td>
-                    <td>
-                     <img src="{{URL::to('assets/images/dashboard/img_1.jpg')}}" class="mb-2 mw-100 w-100  rounded" alt="image">
-                    </td>
-                    <td><label class="badge badge-success">Available</label></td>
+                    <td>{{$row->id}}</td>
+                    <td>{{$row->title}}</td>
+                    <td>{{$row->slug}}</td>
+                    <td>{{$row->feature}}</td>
+                    <td>{{$row->price}}</td>
+                    <td>{{$row->discount}}</td>
+                    <td>{{$row->size}}</td>
+                    <td>{{$row->name}}</td>
+                    <td>{{$row->stock}}</td>
+                    <td><img src="{{URL::to($row->image)}}" class="rounded"></td>
+                    <td><label class="badge badge-danger">{{$row->status}}</label></td>
                     <td><a href=""><i class="mdi mdi-pencil-box-outline tip" style="font-size: 20px;color:rgb(13, 27, 221);">
                         <span class="tooltiptext h6">Edit</span>
                     </i></a>&nbsp;&nbsp;&nbsp;
@@ -55,6 +54,7 @@
 
                   </tr>
                 </tbody>
+                @endforeach
               </table>
             </div>
           </div>

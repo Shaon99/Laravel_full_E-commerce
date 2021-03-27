@@ -5,16 +5,16 @@
       <div class="page-header" >
         <h3 class="page-title">
             <span class="page-title-icon bg-gradient-primary text-white mr-2">
-            <i class="mdi  mdi-plus"></i> </span>Add Category</h3>
+            <i class="mdi  mdi-plus"></i> </span>Add Brand</h3>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <a href="/admin/category" class="btn btn-gradient-info ">All Category</a>
+                <a href="/admin/brand" class="btn btn-gradient-info">All Brand</a>
               </ol>
-            </nav>        
+            </nav>
       </div>
           <div class="card">
             <div class="card-body">
-                <form action="{{route('admin.category')}}" method="post">
+                <form action="{{route('admin.brand')}}" method="post" enctype="multipart/form-data">
                     @if(Session::get('success'))
              <div class="alert bg-gradient-primary">
                 {{ Session::get('success') }}
@@ -28,20 +28,14 @@
            @endif
            @csrf
            <div class="form-group">
-            <label>Title</label>
-            <input type="text" class="mt-1 mb-1 form-control" name="title" placeholder="Title" value="{{old('title')}}">
-            <span class="text-danger">@error('title'){{ $message }} @enderror</span>
-            </div>
-
             <div class="form-group">
-                <label>Slug</label>
-                <input type="text" class="mt-1 mb-1 form-control" name="slug" placeholder="Slug Name" value="{{old('slug')}}">
-                <span class="text-danger">@error('slug'){{ $message }} @enderror</span>
+                <label>Brand</label>
+                <input type="text" class="mt-1 mb-1 form-control" name="name"  placeholder="Brand Name" value="{{old('brand')}}">
+                <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                 </div>
                     <div class="form-group">
-                        <label>Status</label>
-                        <input type="text" class="mt-1 mb-1 form-control" name="status" placeholder="Status" value="{{old('status')}}">
-                        <span class="text-danger">@error('status'){{ $message }} @enderror</span>
+                        <label>Logo</label>
+                        <input type="file" class="mt-1 mb-1 form-control" name="logo">
                         </div>
                                
                         <div class="mt-3">

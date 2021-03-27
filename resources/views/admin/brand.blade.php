@@ -8,38 +8,34 @@
             <i class="mdi  mdi-cube"></i> </span>Brand</h3>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <a href="" class="btn btn-gradient-info mdi mdi-plus">Add Brand</a>
+            <a href="/admin/addbrand" class="btn btn-gradient-info mdi mdi-plus">Add Brand</a>
           </ol>
         </nav>
       </div>
           <div class="card">
             <div class="card-body">
-              <table class="table table-striped">
+              <table class="table">
                 <thead>
                   <tr>
-                    <th>S.N</th>
-                    <th>Title</th>
                     <th>Brand</th>
                     <th>Logo</th>
                     <th>Action</th>
                   </tr>
+                  @foreach($data as $row)
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>Jacob</td>
-                    <td>ddd</td>
-                    <td >
-                        <img src="../../assets/images/faces/face2.jpg" alt="image" />
-                      </td>
-                    <td><a href=""><i class="mdi mdi-pencil-box-outline tip" style="font-size: 25px;color:rgb(13, 27, 221);">
-                        <span class="tooltiptext h6">Edit</span>
-                    </i></a>&nbsp;&nbsp;&nbsp;
-                    <a href=""><i class="mdi mdi-delete tip" style="font-size: 25px;color:crimson;">
-                        <span class="tooltiptext h6">Delete</span>
-                    </i></a></td>
+                    <td>{{$row->name}}</td>
+                    <td><img src="{{URL::to($row->logo)}}" class="rounded"></td>
+                    <td><a href="{{ URL::to('/admin/editbrand/' .$row->id)}}"><i class="mdi mdi-pencil-box-outline tip" style="font-size: 25px;color:rgb(13, 27, 221);">
+                      <span class="tooltiptext h6">Edit</span>
+                  </i></a>&nbsp;&nbsp;&nbsp;
+                  <a id="delete"href="{{ URL::to('/admin/deletebrand/' .$row->id)}}"><i class="mdi mdi-delete tip"style="font-size: 25px;color:crimson;">
+                      <span class="tooltiptext h6">Delete</span>
+                  </i></a></td>
                   </tr>
                 </tbody>
+                @endforeach
               </table>
             </div>
           </div>

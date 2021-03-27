@@ -37,36 +37,6 @@ h2 {
     }
 }
 
-/*tooltips*/
-
- .tip {
-	position: relative;
-	display: inline-block;
-  }
-  
-  .tip .tooltiptext {
-	visibility: hidden;
-	width: auto;
-	background-color:#ff6f61;
-	color: white;
-	text-align: center;
-	font-size: 13px;
-	font-style: normal;
-	font-weight: 400;
-	font-family: 'ubuntu-light', sans-serif;
-	border-radius: 2px;
-	padding: auto;
-
-	/* Position the tooltip */
-	position: absolute;
-	z-index: 1;
-	top: 200%;
-  }
-  
-  .tip:hover .tooltiptext {
-	visibility: visible;
-  }
-
 
 /**********************************/
 /******** Back to Top CSS *********/
@@ -714,7 +684,7 @@ h2 {
 }
 
 .product-item .product-title {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     background: #000000;
     transition: all .3s;
@@ -733,11 +703,11 @@ h2 {
 .product-item .product-title a {
     margin-bottom: 5px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .product-item .product-title .ratting i {
-    font-size: 14px;
+    font-size: 15px;
     color: #FF6F61;
 }
 
@@ -841,10 +811,11 @@ h2 {
     display: inline-block;
     color: #ffffff;
     margin: 0;
+	font-size:20px;
 }
 
 .product-item .product-price h3 span {
-    font-size: 16px;
+    font-size: 10px;
 }
 
 .product-item .product-price .btn {
@@ -852,6 +823,7 @@ h2 {
     border: none;
     color: #000000;
     background: #FF6F61;
+	font-size:13px;
 }
 
 .product-item:hover .product-price .btn,

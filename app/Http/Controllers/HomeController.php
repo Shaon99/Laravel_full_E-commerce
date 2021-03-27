@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Models\Role;
-
+use App\Models\Brand;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +13,11 @@ class HomeController extends Controller
   
     public function index()
     {
-        return view('welcome');
+        $data=Brand::all();
+        $data1=Product::all();
+        $data2=Product::where('feature','=','Yes')->get();
+
+        return view('welcome',compact('data','data1','data2'));
     }
 
     public function  product()

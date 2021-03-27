@@ -28,7 +28,7 @@
 <link href="{{asset ('forntend/libb/slick/slick-theme.css')}}" rel="stylesheet">
 
 <!-- Template Stylesheet -->
-<link href="{{asset('forntend/csss/style1.css')}}" rel="stylesheet">
+<link href="{{asset('forntend/csss/style.css')}}" rel="stylesheet">
 </head>
 <body>
 <div class="top-bar">

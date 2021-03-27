@@ -14,10 +14,9 @@
       </div>      
           <div class="card">
             <div class="card-body">
-              <table class="table table-striped">
+              <table class="table">
                 <thead>
                   <tr>
-                    <th>S.N</th>
                     <th>Title</th>
                     <th>Slug</th>
                     <th>Status</th>
@@ -27,7 +26,6 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{{$row->id}}</td>
                     <td>{{$row->title}}</td>
                     <td>{{$row->slug}}</td>
                     <td><label class="badge badge-success">{{$row->status}}</label></td>

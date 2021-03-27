@@ -107,12 +107,10 @@
         <div class="brand">
             <div class="container-fluid">
                 <div class="brand-slider">
-                    <div class="brand-item"><img src="{{('forntend/img/brand-1.png')}}" alt=""></div>
-                    <div class="brand-item"><img src="{{('forntend/img/brand-2.png')}}" alt=""></div>
-                    <div class="brand-item"><img src="{{('forntend/img/brand-3.png')}}" alt=""></div>
-                    <div class="brand-item"><img src="{{('forntend/img/brand-4.png')}}" alt=""></div>
-                    <div class="brand-item"><img src="{{('forntend/img/brand-5.png')}}" alt=""></div>
-                    <div class="brand-item"><img src="{{('forntend/img/brand-6.png')}}" alt=""></div>
+                    @foreach($data as $row)
+                    <div class="brand-item"><img src="{{$row->logo}}" width="90" height="70" alt=""></div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -125,10 +123,11 @@
                     <h1>Recent Product</h1>
                 </div>
                 <div class="row align-items-center product-slider product-slider-4">
+                @foreach($data1 as $row)
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#">{{$row->title}}</a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -139,7 +138,7 @@
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-6.jpg')}}" alt="Product Image">
+                                    <img src="{{$row->image}}" width="350px" height="350px" alt="Product Image">
                                 </a>
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-cart-plus"></i></a>
@@ -148,123 +147,12 @@
                                 </div>
                             </div>
                             <div class="product-price">
-                                <h3><span>$</span>99</h3>
+                                <h3><span>BDT</span>{{$row->price}}</h3>
                                 <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-7.jpg')}}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-8.jpg')}}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-9.jpg')}}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-10.jpg')}}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -277,10 +165,11 @@
                     <h1>Featured Product</h1>
                 </div>
                 <div class="row align-items-center product-slider product-slider-4">
+               @foreach($data2 as $row)
                     <div class="col-lg-3">
                         <div class="product-item">
                             <div class="product-title">
-                                <a href="#">Product Name</a>
+                                <a href="#">{{$row->title}}</a>
                                 <div class="ratting">
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
@@ -291,7 +180,7 @@
                             </div>
                             <div class="product-image">
                                 <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-1.jpg')}}" alt="Product Image">
+                                    <img src="{{$row->image}}" width="350px" height="350px" alt="Product Image">
                                 </a>
                                 <div class="product-action">
                                     <a href="#"><i class="fa fa-cart-plus"></i></a>
@@ -300,123 +189,12 @@
                                 </div>
                             </div>
                             <div class="product-price">
-                                <h3><span>$</span>99</h3>
+                                <h3><span>BDT</span>{{$row->price}}</h3>
                                 <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-2.jpg')}}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-3.jpg')}}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-4.jpg')}}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product-item">
-                            <div class="product-title">
-                                <a href="#">Product Name</a>
-                                <div class="ratting">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                            </div>
-                            <div class="product-image">
-                                <a href="product-detail.html">
-                                    <img src="{{URL::to('forntend/img/product-5.jpg')}}" alt="Product Image">
-                                </a>
-                                <div class="product-action">
-                                    <a href="#"><i class="fa fa-cart-plus"></i></a>
-                                    <a href="#"><i class="fa fa-heart"></i></a>
-                                    <a href="#"><i class="fa fa-search"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-price">
-                                <h3><span>$</span>99</h3>
-                                <a class="btn" href=""><i class="fa fa-shopping-cart"></i>Buy Now</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

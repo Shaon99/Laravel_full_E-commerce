@@ -6,7 +6,11 @@
         <h3 class="page-title">
             <span class="page-title-icon bg-gradient-primary text-white mr-2">
             <i class="mdi  mdi-plus"></i> </span>Update Category</h3>
-        
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <a href="/admin/category" class="btn btn-gradient-info ">All Category</a>
+              </ol>
+            </nav>          
       </div>
           <div class="card">
             <div class="card-body">

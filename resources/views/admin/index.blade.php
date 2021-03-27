@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Admin | E-Store</title>
-    <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
-    <!-- endinject -->
-    <!-- Plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <!-- endinject -->
-    <!-- Layout styles -->
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <!-- End layout styles -->
-
     <link rel="shortcut icon" href="{{URL::to('assets/images/s.jpg')}}" />
   </head>
   <body>
     <div class="container-scroller">
-      <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
           <a class="navbar-brand brand-logo" href="/admin/dashboard"><img src="{{URL::to('assets/images/logo.png')}}" alt="logo" /></a>
@@ -173,9 +162,7 @@
           </button>
         </div>
       </nav>
-      <!-- partial -->
       <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
             <li class="nav-item nav-profile">
@@ -183,7 +170,6 @@
                 <div class="nav-profile-image">
                   <img src="{{URL::to('assets/images/faces/face1.jpg')}}" alt="profile">
                   <span class="login-status online"></span>
-                  <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column">
                   <span class="font-weight-bold mb-2">David Grey. H</span>
@@ -245,34 +231,25 @@
               <div class="collapse" id="general-pages">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="/admin/sell">Sells</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="/admin/report">Report</a></li>
-                
+                  <li class="nav-item"> <a class="nav-link" href="/admin/report">Report</a></li>                
                 </ul>
               </div>
             </li>
             <li class="nav-item sidebar-actions">
               <span class="nav-link">
                 <div class="border-bottom">
-                  <a href="/admin/adduser" class="btn btn-block btn-lg  btn-gradient-danger mt-4">+ Add User</a>
-                </div>
-                <a href="/admin/product" class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add Product</a>
-                <div class="mt-4">
-                  
+                  <a href="/admin/addproduct" class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add Product</a>
                 </div>
               </span>
             </li>
           </ul>
         </nav>
-        <!-- partial -->
-
-         {{-- content here --}}
+        {{-- content --}}
   @yield('content')
-
  </div>
 </div>
       </div>
           <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
           <footer class="footer">
               <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a href="shaon99.github.io/shaonportfolio" target="_blank">Copyright © ShaonAhmed || E-Store</a></span>
             </div>
